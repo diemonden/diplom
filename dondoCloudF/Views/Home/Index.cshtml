@@ -1,0 +1,73 @@
+﻿@{
+	ViewData["Title"] = "dondoCloud";
+}
+<div id="left">
+	<button class="left_button" id="add_button"><img src="images/add.png" /><span>Добавить файлы</span></button>
+	<input id="file-input" type="file" multiple="multiple" name="name" style="display:none;" />
+	<div id="file_drop">
+		<center>Также можно перетащить файлы сюда.</center>
+	</div>
+	<button class="left_button" id="del_button"><img src="images/delete.png" /><span>Удалить</span></button>
+	<br />
+	<button class="left_button" id="download_button"><img src="images/download.png" /><span>Скачать</span></button>
+	<br />
+	<div class="rename_block">
+		<input name="rename" id="rename_input" type="text" value="" />
+	</div>
+	<button class="left_button" id="rename_button"><img src="images/rename.png" /><span>Переименовать</span></button>
+	<!-- file info -->
+	<div id="file_info" hidden>
+		<span class="field">> Имя файла:</span><br /><span class="info" id="name"> Обама.jpg</span>
+		<span class="field">> Размер:</span><br /><span class="info" id="size"> 2 МБ</span>
+		<span class="field">
+			> MIME Тип:
+				<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank">
+					<img src="~/images/info.png" />
+				</a>
+		</span><br /><span class="info" id="type"> image/jpeg</span>
+		<span class="field">> Последнее изменение:</span><br /><span class="info" id="date"> 11.06.2020</span><img src="" />
+	</div>
+	<!--  -->
+</div>
+<main>
+	@*@foreach (var item in Model)
+	{
+		var src = "";
+		var imgClass = "standart_icon";
+		<div class="file_block" id=@item.Name>
+			<div class="file_top">
+				@switch (item.ContentType)
+				{
+					case "image/jpeg":
+					case "image/png":
+					case "image/pjpeg":
+					case "image/bmp":
+					case "image/svg+xml":
+					case "image/webp":
+						src = item.MediaLink;
+						imgClass = "image_file";
+						break;
+					case "text/plain":
+						src = "/images/file_icons/txt.png"; break;
+					case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+						src = "/images/file_icons/doc.png";  break;
+					case "application/pdf":
+						src = "/images/file_icons/pdf.png"; break;
+					case "audio/mpeg":
+						src = "/images/file_icons/mp3.png"; break;
+					case "video/mp4":
+						src = "/images/file_icons/mp4.png"; break;
+					default: src = "/images/file_icons/other_text.png";  break;
+				}
+				<img src=@src class=@imgClass />
+			</div>
+			<div class="file_bottom">
+				<div class="file_name">
+					<center>
+						@item.Name
+					</center>
+				</div>
+			</div>
+		</div>
+	}*@
+</main>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - dondoCloudCore</title>
+	<link rel="stylesheet" href="~/css/site.css" />
+
+	<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="~/js/site.js"></script>
+</head>
+<body>
+	<overlay>
+		<div class="page-overlay" id="overlay" hidden>
+			<div id="cross"><img src="~/images/x.png" /></div>
+			<div id="ov_content">
+
+			</div>
+		</div>
+	</overlay>
+	<header>
+		<!-- LOGO -->
+		<div class="site_logo">
+			<img src="images/logo.png" alt="">
+		</div>
+		<!-- SEARCH -->
+		<div class="header-search">
+			<form method="post" style="width:100%" action="">
+				<input name="searchString" id="search_input" type="text" value="" onsubmit="">
+				<button type="submit"><img src="images/search2.png" /></button>
+			</form>
+		</div>
+		<!-- ACCOUNT BLOCK -->
+		<div class="account">
+			<div class="ac_name">
+				Общее хранилище
+			<br/>
+			<a class="ac_redirect"  href="">В личное хранилище</a>
+			</div>
+			<div class="ac_pic">
+				<img src="images/утро.jpg" alt="xxx">
+			</div>
+			<div class="ac_infoblock" id="ac_infoblock" hidden>
+				<div class="ac_infoblock_pic">
+					<img src="images/утро.jpg" alt="xxx">
+				</div>
+				<div class="ac_infoblock_i">
+					<div class="ac_infoblock_name">
+						Денис Харламов
+					</div>
+					<div class="ac_infoblock_email">
+						den4ik13121@gmail.com
+					</div>
+					<button>Выход</button>
+				</div>
+				
+			</div>
+		</div>
+	</header>
+	@RenderBody()
+</body>
+</html>

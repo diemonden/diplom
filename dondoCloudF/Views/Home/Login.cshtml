@@ -1,0 +1,25 @@
+﻿
+@{
+	ViewData["Title"] = "dondoCloud - Авторизация";
+}
+<br />
+<div id="login">
+	<h1 class="h1">Авторизация</h1>
+	<div class="form-cont">
+		<form enctype="multipart/form-data" action="/Home/Authorization/" id="registerform" method="post">
+			<div class="form-title">
+				Введите e-mail и пароль для входа
+			</div>
+			<span>e-mail</span><br />
+			<input name="Email" size="20" type="text" value="" class="input2" />
+			<span> Пароль</span><br />
+			<input name="Password" size="20" type="password" value="" class="input2" />
+			<center><button type="submit" class="btn btn--orng btn--xlg">Авторизироваться</button></center>
+			<p>
+				<center>
+					Ещё не зарегистрированы? <a href=@Url.Action("Registration","Home")>Зарегистрироваться</a>
+				</center>
+			</p>
+		</form>
+	</div>
+</div>

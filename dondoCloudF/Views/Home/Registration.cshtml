@@ -1,0 +1,29 @@
+﻿@{
+	ViewData["Title"] = "dondoCloud - Регистрация";
+}
+<br />
+<div id="login">
+	<h1 class="h1">Регистрация</h1>
+	<div class="form-cont">
+		<form enctype="multipart/form-data" action="/Home/NewUser/" id="registerform" method="post">
+			<div class="form-title">
+				Введите данные для регистрации
+			</div>
+			<span>e-mail</span><br />
+			<input name="Email" size="20" type="text" value="" class="input2" />
+			<span>Имя пользователя</span><br />
+			<input name="Username" size="20" type="text" value="" class="input2" />
+			<span> Пароль</span><br />
+			<input name="Password" size="20" type="password" value="" class="input2" />
+			<span>Подтвердите пароль</span><br />
+			<input name="Confirm" size="20" type="password" value="" class="input2" />
+			<center><button type="submit" class="btn btn--orng btn--xlg">Зарегистрироваться</button></center>
+			<p>
+				<center>
+					Уже зарегистрированы? <a href=@Url.Action("Login","Home")>Войти</a>
+				</center>
+			</p>
+		</form>
+	</div>
+</div>
+
